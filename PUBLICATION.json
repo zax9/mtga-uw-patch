@@ -1,0 +1,10 @@
+{
+  "version": "3.0.0",
+  "packaging_revision": "GitHub r1",
+  "source_changed_since_native_release": false,
+  "executable_sha256": "b19b7e11ddfba4fd14e955c5dc9f3c3e8e48a0da7468b59a20c4077df344b79b",
+  "archive": "downloads/MTGA_Ultrawide_Native_v3_0_GitHub_r1.zip",
+  "archive_sha256": "ba6e54d4e5af0d7ee4303bce71097881324eecfeff1a3bb786784b2b3e604e47",
+  "license": "MIT",
+  "user_report": "User reports v3.0.0 appears to work on their Windows 10 standalone-launcher setup with a 3440x1440 display; separate from automated Linux tests."
+}

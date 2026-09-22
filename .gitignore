@@ -1,0 +1,29 @@
+# Game files and generated test fixtures must remain local.
+*.dll
+*.bak
+*.staged
+*.lock
+Managed.zip
+boot.config
+tests/fixtures/
+tests/bounds_fixtures/
+
+# Build and development outputs.
+build/
+native_build/
+*.o
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.zip
+!binaries/v3.0.0/MTGAUltrawidePatcher.exe
+!downloads/MTGA_Ultrawide_Native_v3_0_GitHub_r1.zip
+tests/matcher_harness_sanitized
+tests/mtga-patcher
+source/mtga-ultrawide
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.idea/

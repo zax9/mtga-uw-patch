@@ -1,0 +1,43 @@
+{
+  "checks": 32,
+  "passed": [
+    "Original status is read-only",
+    "Install changes exactly the intended four bytes; verifies and retains original backup; removes temporaries",
+    "Repeated install is a no-op and preserves backup metadata",
+    "Patched status is read-only and identifies restorable backup",
+    "Restore reproduces original byte-for-byte",
+    "Repeated restore is a no-op",
+    "Reinstall validates and reuses original backup without overwrite",
+    "Restores patch installed by v1 using its existing original backup name",
+    "Missing backup blocks restore without modifying target",
+    "Corrupt backup blocks restore and is retained untouched",
+    "Corrupt existing backup blocks installation without overwrite",
+    "Existing operation lock blocks installation and remains untouched",
+    "Unrelated post-patch DLL change blocks restore from stale original",
+    "Backup from older build cannot overwrite newer patched build",
+    "Synthetic changed build installs/restores using its own backup and preserves older build backup",
+    "Ambiguous different originals yielding same patched image block restore",
+    "Install/restore synthetic relocated_method with dynamically located operand",
+    "Install/restore synthetic remapped_member_tokens with dynamically located operand",
+    "Install/restore synthetic relocated_method_with_nops with dynamically located operand",
+    "Install/restore synthetic relocated_nops_remapped_tokens with dynamically located operand",
+    "All actions reject missing_getter without mutation",
+    "All actions reject ambiguous_getter without mutation",
+    "All actions reject helper_multiplies without mutation",
+    "All actions reject getter_uses_height_twice without mutation",
+    "All actions reject strong_name_signed_flag without mutation",
+    "All actions reject authenticode_directory without mutation",
+    "All actions reject not_a_pe without mutation",
+    "Running MTGA process blocks installation",
+    "Running MTGALauncher process blocks installation",
+    "Running MTGAUpdater process blocks installation",
+    "Conflicting CLI actions are rejected before mutation",
+    "Unknown CLI options are rejected before mutation"
+  ],
+  "runtime": "native C++ executable",
+  "platform": "linux",
+  "limitations": [
+    "Native C++ engine tested on Linux; Windows GUI launch, UAC, ACLs, antivirus, updater behavior and fullscreen graphics were not tested.",
+    "Other than supplied original and its exact v1 patch, fixtures are synthetic; no other real Arena version was tested."
+  ]
+}
