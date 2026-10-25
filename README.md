@@ -1,3 +1,5 @@
+> **This repo and project were brought to you by GPT 6 Astra.**
+
 # MTG Arena Ultrawide Fix
 
 A small, native Windows patcher that fixes a fullscreen aspect-ratio check in **Magic: The Gathering Arena**. It allows supported ultrawide resolutions to remain fullscreen when Arena changes scenes.
@@ -81,6 +83,20 @@ An Arena update or launcher repair can replace `Core.dll`. Run **Check** afterwa
 Only one actual Arena release was available for analysis; other compatibility cases were synthetic variations. Automated tests exercised shared native logic on Linux. They do not independently establish Windows GUI behavior, every Windows file-replacement failure mode, all launcher versions, or all monitor arrangements. See [test scope and reports](tests/TESTING.md).
 
 The inspected `Core.dll` has no embedded Authenticode or strong-name signature and has a zero PE checksum. No validation of `Core.dll` was identified in the inspected managed code. This does **not** establish that every launcher or native player build will accept modifications: those components were not available for this analysis. Updates and repair may restore the official DLL.
+
+## Developed with AI
+
+This solution was developed entirely with AI, using **GPT 6 Astra through ChatGPT**. The AI analyzed the supplied game binaries and wrote the patcher, native Windows GUI, tests, build instructions, and documentation. The repository owner supplied the problem report, game files, requirements, and feedback, and tested the patcher in Arena.
+
+The development process included these steps:
+
+1. **Upload game binaries for analysis.** The owner uploaded files from the affected Arena installation to the AI, including the managed Unity assembly `Core.dll`.
+2. **Find the cause.** The AI examined the supplied binaries and traced the scene-load resolution checks. It identified the upper aspect-ratio limit of 1.81 and the path that forces a window when the ratio is rejected.
+3. **Develop a targeted patch.** The AI implemented the four-byte change from 1.81 to 2.40. It added method and IL checks to locate the change across supported build variations, plus backup, restore, and file verification logic.
+4. **Refine the application.** Follow-up requests led from a larger prototype to a small native C++17/Win32 executable with a minimal GUI.
+5. **Test the result.** The AI generated and ran automated tests for matching, installation, restore, and refusal cases. These tests ran on Linux and included synthetic build variations. The owner then tested the native Windows patcher in Arena and reported that it appeared to work.
+
+Only one actual Arena release was supplied for analysis. AI development and automated tests do not establish compatibility with every game version or Windows setup. The uploaded game binaries were analysis inputs; **no game DLLs or patched game binaries are distributed in this repository**.
 
 ## Source and documentation
 
